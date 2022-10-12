@@ -1,0 +1,1 @@
+# Strukture-podataka-2022.-23.
