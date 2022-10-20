@@ -1,0 +1,122 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+#define MAX_STRING_LENGTH 1024
+
+
+
+typedef struct osoba{
+	char ime[MAX_STRING_LENGTH];
+	char prezime[MAX_STRING_LENGTH];
+	int godrod;
+
+}osoba;
+
+typedef cvor* poz;
+
+typedef struct cvor{
+	osoba el;
+	poz next;
+}cvor;
+
+int unosP(osoba,poz);
+int ispis(poz);
+int unosK(osoba,poz);
+poz trazi(char,poz);
+int brisi(osoba,poz);
+poz traziP(osoba,poz);
+
+
+
+
+int main()
+{
+	cvor head;
+	osoba o;
+	head.next=NULL;
+	unosP(o,&head);
+
+	return 0;
+}
+
+int unosP(osoba x,poz p)
+{
+	poz q;
+	q=(poz)malloc(sizeof(cvor));
+	q->el=x;
+	q->next=p->next;
+	p->next=q;
+	return 0;
+}
+
+int ispis(poz p)
+{
+	while(p!=NULL)
+	{
+		printf("%s %s %d",p->el.ime,p->el.prezime,p->el.godrod);
+		p=p->next;
+	}
+	return 0;
+}
+
+int unosK(osoba x,poz p)
+{
+	poz q;
+	q=(poz)malloc(sizeof(cvor));
+	while(p->next !=NULL)
+	{
+		p=p->next;
+	}
+	q->el=x;
+	p->next=q;
+	q->next=NULL;
+	return 0;
+}
+
+poz trazi(char prez[],poz p)
+{
+	while(p!=NULL && p->el.prezime!=prez);
+	{
+		p=p->next;
+	}
+	return p;
+}
+
+int brisi(osoba x,poz p)
+{
+	poz prev,temp;
+	prev=traziP(x,p);
+	if(prev==NULL)
+	{
+		printf("Nema ga!");
+		return -1;
+	}
+	else
+	{
+		temp=prev->next;
+		prev->next=temp->next;
+		free(temp);
+	}
+}
+
+poz traziP(osoba x,poz p)
+{
+	poz pret;
+	pret=p;
+	p=p->next;
+	while(p!=NULL && p->el!=x)
+	{
+		pret=pret->next;
+		p=p->next;
+	}
+	if(p==NULL)
+	{
+		return NULL;
+	}
+	else
+	{
+		return pret;
+	}
+}
