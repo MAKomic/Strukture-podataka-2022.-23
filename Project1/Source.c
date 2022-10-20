@@ -39,7 +39,7 @@ int CountF(char* filename)
 	return CountStudents;
 }
 
-void getDataAndPrintData(int CountStudents, char* filename)
+void InputAndOutputOfData(int CountStudents, char* filename)
 {
 	Student* student;
 	FILE* f;
@@ -59,7 +59,7 @@ void getDataAndPrintData(int CountStudents, char* filename)
 		AvarageNumberOfPoints = 0;
 		printf("%s %s %d\n", student[i].Name, student[i].Surname, student[i].NumberOfPoints);
 		AvarageNumberOfPoints = student[i].NumberOfPoints / (float)MAX_NUMBER_OF_POINTS * 100;
-		printf("Realtivan broj bodova je:%f\n", AvarageNumberOfPoints);
+		printf("The avarage number of points is:%f\n", AvarageNumberOfPoints);
 	}
 }
 
@@ -70,9 +70,9 @@ void main()
 	FILE* f = NULL;
 	char filename[MAX_FILE_NAME];
 
-	printf("upisite ime datoteke:\n");
+	printf("Input the name of the file:\n");
 	scanf("%s", filename);
 
 	CountStudents = CountF(filename);
-	getDataAndPrintData(CountStudents, filename);
+	InputAndOutputOfData(CountStudents, filename);
 }
