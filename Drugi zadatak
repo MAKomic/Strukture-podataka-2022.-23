@@ -50,7 +50,7 @@ int main()
 	unosK(unosOsobe(), &head);
 	ispis(head.next);
 
-	printf("Unesi prezime koje zelis pronac: ");
+	printf("\nUnesi prezime koje zelis pronac: ");
 	scanf(" %s", tren);
 	printf("Adresa elementa sa prezimenom %s je %p\n",tren,trazi(tren, head.next));
 
