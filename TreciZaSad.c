@@ -62,14 +62,14 @@ int main()
 
 		case 'c':
 			printf("Unesi prezime osobe koju zelis izbrisat: ");
-			scanf("%s", proizvoljno_prezime);
+			scanf(" %s", proizvoljno_prezime);
 			brisi(proizvoljno_prezime,&head);
 			break;
 
 		case 'd':
 			printf("Unesi prezime osobe koju zelis pronac: ");
-			scanf("%s", proizvoljno_prezime);
-			printf(" %p", trazi(proizvoljno_prezime,&head));
+			scanf(" %s", proizvoljno_prezime);
+			printf("%p", trazi(proizvoljno_prezime,&head));
 			break;
 
 		case 'e':
@@ -86,13 +86,13 @@ int main()
 
 		case 'h':
 			printf("Unesi prezime osobe iza koje zelis unit novu osobu: ");
-			scanf("%s", proizvoljno_prezime);
+			scanf(" %s", proizvoljno_prezime);
 			unosIza(unosOsobe(),proizvoljno_prezime, head.next);
 			break;
 
 		case 'i':
 			printf("Unesi prezime osobe ispred koje zelis unit novu osobu: ");
-			scanf("%s", proizvoljno_prezime);
+			scanf(" %s", proizvoljno_prezime);
 			unosIspred(unosOsobe(), proizvoljno_prezime, &head);
 			break;
 
