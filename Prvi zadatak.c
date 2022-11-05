@@ -73,16 +73,10 @@ student* putStudentsInList(char* filename,int count)
 	
 	fp = fopen(filename, "r");
 	fp1 = fopen(filename, "r");
-	if (fp == NULL)
+	if (fp == NULL || fp1 == NULL)
 	{
 		printf("Datoteka se nije otvorila!\r\n");
-		fclose(fp);
-
-	}
-	if (fp1 == NULL)
-	{
-		printf("Datoteka se nije otvorila!\r\n");
-		fclose(fp1);
+		return FILE_DIDNT_OPEN_ERROR;
 
 	}
 	
