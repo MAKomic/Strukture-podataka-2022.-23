@@ -402,7 +402,6 @@ int citajListuIzDatoteke(char ime_datoteke[], poz poz_head)
 	if (fp == NULL)
 	{
 		printf("Datoteka se nije otvorila.");
-		fclose(fp);
 		return DATOTEKA_SE_NIJE_OTVORILA;
 	}
 
@@ -424,7 +423,6 @@ int upisiListuUDatoteku(char ime_datoteke[], poz poz_prvog)
 	if (fp == NULL)
 	{
 		printf("Datoteka se nije otvorila.");
-		fclose(fp);
 		return DATOTEKA_SE_NIJE_OTVORILA;
 	}
 
