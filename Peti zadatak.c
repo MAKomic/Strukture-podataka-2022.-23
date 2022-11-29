@@ -76,9 +76,9 @@ int citajDatoteku(char ime_datoteke[], poz head)
 	
 	while (!feof(fp))
 	{
-		fscanf(fp, "%s", buffer);
+		fscanf(fp, "%s ", buffer);
 
-		if ((sscanf(buffer, "%d", &n)) == 1)
+		if ((sscanf(buffer, "%d ", &n)) == 1)
 		{
 			Push((float)n, head);
 			brojacEl++;
