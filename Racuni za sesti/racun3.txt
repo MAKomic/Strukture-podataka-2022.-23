@@ -1,0 +1,7 @@
+2011-6-3
+lubenica 110 222.99
+ananas 3 18.99
+jagoda 24 5.99
+banana 10 7.99
+malina 31 1.99
+mango 2 0.5

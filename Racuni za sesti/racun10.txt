@@ -1,0 +1,12 @@
+2012-5-5
+malina 4 13.99
+mango 2 17.99
+naranca 20 20.99
+ananas 5 27.99
+banana 17 17.99
+jagoda 33 0.99
+kivi 12 13.99
+lubenica 9 65.99
+breskva 31 3.99
+grozdje 256789 0.99
+

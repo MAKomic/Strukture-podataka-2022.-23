@@ -1,0 +1,7 @@
+2012-1-15
+banana 15 15.99
+ananas 3 2.99
+breskva 10 7.99
+jagoda 12 3.99
+malina 21 1.99
+kivi 14 3.99
