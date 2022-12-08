@@ -204,6 +204,12 @@ int sortiraniUnosPoDatumu(poz_ head, char datum[MAX_LINE_SIZE],poz pomocniCvor)
 {
 	poz_ q = NULL;
 	q = (poz_)malloc(sizeof(cvor_));
+	
+	if (q == NULL)
+	{
+		printf("Neuspjesno alocirana memorija!");
+		return NEUSPJESNA_ALOKACIJA;
+	}
 
 	while ((head->next != NULL) && (usporediDatume(head->next->dat,datum)<0))
 	{
