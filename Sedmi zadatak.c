@@ -58,6 +58,8 @@ int main()
 
 	poz current = &root;
 	poz kontrola = NULL;
+	
+	int level = 0;
 
 	strcpy(root.ime, "ROOT");
 	strcpy(root.sadrzaj, "ROOT");
@@ -101,7 +103,7 @@ int main()
 
 		case 'd':
 			printf("\n<%s>\t%s\n", current->ime, current->sadrzaj);
-			dir(current->child);
+			dir(current->child, level + 1);
 			break;
 
 		case '0':
@@ -141,11 +143,11 @@ int md(poz current_child, poz current)
 	char tempSadrzaj[MAX_LINE_SIZE] = { 0 };
 
 	printf("Unesi naziv novog direktorija: ");
-	scanf(" %s", tempIme);
+	scanf(" %[^\n]%*c", tempIme);
 	strcpy(q->ime, tempIme);
 
 	printf("Unesi sadrzaj novog direktorija: ");
-	scanf(" %s", tempSadrzaj);
+	scanf(" %[^\n]%*c", tempSadrzaj);
 	strcpy(q->sadrzaj, tempSadrzaj);
 
 	if (current->child == NULL)
@@ -191,7 +193,7 @@ poz cd_dir(poz adresa_root)
 	poz tempRoot = adresa_root;
 
 	printf("Unesi ime direktorija u koji zelis otic: ");
-	scanf(" %s", tempIme);
+	scanf(" %[^\n]%*c", tempIme);
 
 	find(tempRoot, tempIme, pom);
 
@@ -225,22 +227,22 @@ poz cd__(poz_ head)
 
 }
 
-int dir(poz current)
+int dir(poz current, int level)
 {
 	if (current == NULL)
 	{
 		return USPJESAN_ISPIS;
 	}
 
-	printf("\n<%s>\t%s\n", current->ime, current->sadrzaj);
+	printf("\n");
 
-	dir(current->sibling);
-	if (current->child != NULL)
-	{
-		printf("\nOvo ispod su dica od %s\n", current->ime);
-	}
-	dir(current->child);
+	for (i = 0; i < level; i++)printf("\t");
 
+	printf("<%s>\t%s\n", current->ime, current->sadrzaj);
+
+	dir(current->child, level + 1);
+	printf("\n");
+	dir(current->sibling, level);
 
 	return USPJESAN_ISPIS;
 
