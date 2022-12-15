@@ -193,7 +193,7 @@ poz cd_dir(poz adresa_root)
 	poz tempRoot = adresa_root;
 
 	printf("Unesi ime direktorija u koji zelis otic: ");
-	scanf(" %s", tempIme);
+	scanf(" %[^\n]%*c", tempIme);
 
 	find(tempRoot, tempIme, pom);
 
