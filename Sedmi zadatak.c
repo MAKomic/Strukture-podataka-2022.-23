@@ -233,10 +233,12 @@ int dir(poz current, int level)
 	{
 		return USPJESAN_ISPIS;
 	}
+	
+	int i = 0;
 
 	printf("\n");
 
-	for (i = 0; i < level; i++)printf("\t");
+	for (i = 0; i < level; i++) printf("\t");
 
 	printf("<%s>\t%s\n", current->ime, current->sadrzaj);
 
