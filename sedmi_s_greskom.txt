@@ -143,11 +143,11 @@ int md(poz current_child, poz current)
 	char tempSadrzaj[MAX_LINE_SIZE] = { 0 };
 
 	printf("Unesi naziv novog direktorija: ");
-	scanf(" %s", tempIme);
+	scanf(" %[^\n]%*c", tempIme);
 	strcpy(q->ime, tempIme);
 
 	printf("Unesi sadrzaj novog direktorija: ");
-	scanf(" %s", tempSadrzaj);
+	scanf(" %[^\n]%*c", tempSadrzaj);
 	strcpy(q->sadrzaj, tempSadrzaj);
 
 	if (current->child == NULL)
