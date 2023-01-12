@@ -145,14 +145,16 @@ int main()
 	{
 		printf("\nUspjesan unos!\n\n");
 	}
+	
+	/*
+	brisiSve(poz_root);
+	brisiSve(poz_root2);
 
-	//brisiSve(poz_root);
-	//brisiSve(poz_root2);
-
-	//brisiRed(&head);
-	//brisiRed(&head2);
-	//brisiRed(&head3);
-
+	brisiRed(&head);
+	brisiRed(&head2);
+	brisiRed(&head3);
+	*/
+	
 	return 0;
 }
 
