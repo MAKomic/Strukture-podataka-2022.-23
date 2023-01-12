@@ -11,6 +11,7 @@
 
 #define USPJESAN_ISPIS 1
 #define USPJESAN_UNOS 1
+#define USPJESNO_BRISANJE 1
 
 typedef struct cvor* poz;
 typedef struct red* poz_;
@@ -19,7 +20,7 @@ typedef struct cvor {
 	int el;
 	poz livo;
 	poz desno;
-}cvor;
+};
 
 typedef struct red {
 	poz clan;
@@ -27,7 +28,7 @@ typedef struct red {
 }red;
 
 poz insert(poz, poz);
-int replace(poz p, poz_ head3, poz_ head2, int* suma);
+int replace(poz, poz_, poz_, int*);
 
 int suma_podstabla(poz, poz_, int*);
 
@@ -38,6 +39,9 @@ int printInorder(poz, poz_);
 
 int dodajNaKraj(poz_, poz);
 poz skiniSaPocetka(poz_);
+
+int brisiSve(poz);
+int brisiRed(poz_);
 
 
 int main()
@@ -141,6 +145,13 @@ int main()
 	{
 		printf("\nUspjesan unos!\n\n");
 	}
+
+	//brisiSve(poz_root);
+	//brisiSve(poz_root2);
+
+	//brisiRed(&head);
+	//brisiRed(&head2);
+	//brisiRed(&head3);
 
 	return 0;
 }
@@ -313,4 +324,41 @@ int dodajNaKraj(poz_ head, poz p)
 	q->next = NULL;
 
 	return USPJESAN_UNOS;
+}
+
+int brisiSve(poz root)
+{
+	if (root == NULL)
+	{
+		return USPJESNO_BRISANJE;
+	}
+
+	else if (root->livo != NULL)
+	{
+		brisiSve(root->livo);
+	}
+
+
+	if (root->desno != NULL)
+	{
+		brisiSve(root->desno);
+	}
+
+	free(root);
+
+	return USPJESNO_BRISANJE;
+
+}
+
+int brisiRed(poz_ head)
+{
+	poz_ temp = NULL;
+	while (head->next != NULL)
+	{
+		temp = head->next;
+		head->next = temp->next;
+		free(temp);
+	}
+
+	return USPJESNO_BRISANJE;
 }
