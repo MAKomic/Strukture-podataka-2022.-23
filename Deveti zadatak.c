@@ -20,7 +20,7 @@ typedef struct cvor {
 	int el;
 	poz livo;
 	poz desno;
-};
+}cvor;
 
 typedef struct red {
 	poz clan;
