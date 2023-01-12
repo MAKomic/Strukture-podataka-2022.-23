@@ -351,7 +351,6 @@ int brisiSve(poz root)
 	return USPJESNO_BRISANJE;
 
 }
-
 int brisiRed(poz_ head)
 {
 	poz_ temp = NULL;
