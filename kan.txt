@@ -1,0 +1,5 @@
+Toronto,3622184
+Vancouver,1419277
+Oshava,195322
+Ottawa,751421
+Saskatoon,186412

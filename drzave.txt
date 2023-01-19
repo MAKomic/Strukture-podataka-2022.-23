@@ -1,0 +1,7 @@
+hrvatska hrv.txt
+slovenija slo.txt
+poljska pol.txt
+italija it.txt
+njemacka njem.txt
+irska ir.txt
+kanada kan.txt

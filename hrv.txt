@@ -1,0 +1,5 @@
+Solin,27232
+Split,149830
+Pula,52220
+Varazdin,36187
+Zadar,67309

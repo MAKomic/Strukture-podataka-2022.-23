@@ -1,0 +1,5 @@
+Bialystok,29411
+Warsaw,1706432
+Gdansk,458321
+Krakov,766583
+Czestochowa,242300

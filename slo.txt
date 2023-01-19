@@ -1,0 +1,4 @@
+Koper,23726
+Maribor,114349
+Celje,37834
+Ljubljana,258873

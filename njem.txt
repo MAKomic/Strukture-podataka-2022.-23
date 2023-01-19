@@ -1,0 +1,4 @@
+Koln,1007112
+Munchen,1353186
+Berlin,3460342
+Frankfurt,679993
